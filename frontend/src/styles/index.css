@@ -1,0 +1,256 @@
+@import "tailwindcss";
+@import "@fontsource-variable/vazirmatn";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ───────────────────────── Leadora design tokens ─────────────────────────
+   Lapis (ink & chrome) · Saffron (money & wins) · Pomegranate (overdue/lost) · Pistachio (done)
+   Porcelain neutrals are cool on purpose — no cream.                                      */
+@theme {
+  --font-sans: "Vazirmatn Variable", "Vazirmatn", Tahoma, system-ui, sans-serif;
+
+  --color-lapis-50: #eef0fa;
+  --color-lapis-100: #dce0f4;
+  --color-lapis-200: #b8c0e8;
+  --color-lapis-300: #8c96c9;
+  --color-lapis-400: #5b6bc0;
+  --color-lapis-500: #3b4bb0;
+  --color-lapis-600: #2b3a9e;
+  --color-lapis-700: #232f82;
+  --color-lapis-800: #1c2566;
+  --color-lapis-900: #141b4a;
+  --color-lapis-950: #0d1230;
+
+  --color-saffron-50: #fdf6e9;
+  --color-saffron-100: #fbeacb;
+  --color-saffron-200: #f7d79c;
+  --color-saffron-300: #f2c677;
+  --color-saffron-400: #eeb357;
+  --color-saffron-500: #e9a23b;
+  --color-saffron-600: #cf8724;
+  --color-saffron-700: #a86a17;
+  --color-saffron-800: #7d4f12;
+
+  --color-pomegranate-50: #fbeef1;
+  --color-pomegranate-100: #f6d8df;
+  --color-pomegranate-400: #d9637b;
+  --color-pomegranate-500: #c23a55;
+  --color-pomegranate-600: #a82e47;
+  --color-pomegranate-700: #862337;
+
+  --color-pistachio-50: #eef6f0;
+  --color-pistachio-100: #d6eadb;
+  --color-pistachio-400: #7cb68a;
+  --color-pistachio-500: #5e9e6e;
+  --color-pistachio-600: #4a8559;
+  --color-pistachio-700: #386644;
+
+  --color-plum-500: #7a4fb5;
+
+  /* Type scale (classic 12·14·16·18·21·24·30·36·48·60) */
+  --text-2xs: 0.6875rem;
+  --text-2xs--line-height: 1.5;
+
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-2xl: 28px;
+
+  --shadow-hair: 0 1px 0 rgb(20 27 74 / 0.04);
+  --shadow-card: 0 1px 2px rgb(20 27 74 / 0.06), 0 0 0 1px rgb(20 27 74 / 0.02);
+  --shadow-pop: 0 18px 40px -12px rgb(20 27 74 / 0.28), 0 4px 10px -2px rgb(20 27 74 / 0.08);
+  --shadow-lift: 0 22px 44px -14px rgb(43 58 158 / 0.42), 0 6px 14px -6px rgb(20 27 74 / 0.18);
+
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --animate-fade-in: fade-in 160ms var(--ease-out-quint);
+  --animate-pop-in: pop-in 200ms var(--ease-out-quint);
+  --animate-slide-in: slide-in 260ms var(--ease-out-quint);
+  --animate-shimmer: shimmer 1.6s linear infinite;
+
+  @keyframes fade-in { from { opacity: 0 } to { opacity: 1 } }
+  @keyframes pop-in { from { opacity: 0; transform: translateY(4px) scale(0.98) } to { opacity: 1; transform: none } }
+  @keyframes slide-in { from { transform: translateX(-100%) } to { transform: none } }
+  @keyframes shimmer { from { background-position: 200% 0 } to { background-position: -200% 0 } }
+}
+
+/* Semantic surface tokens — light & dark are chosen, not inverted. */
+:root {
+  --canvas: #f5f6fa;
+  --surface: #ffffff;
+  --surface-2: #f9fafc;
+  --sunken: #eef0f6;
+  --line: #e3e6f0;
+  --line-strong: #cfd4e4;
+  --fg: #1b2140;
+  --fg-muted: #5c6487;
+  --fg-subtle: #8a91ad;
+  --accent: #2b3a9e;
+  --accent-fg: #ffffff;
+  --accent-soft: #eef0fa;
+  --money: #a86a17;
+  --ring: rgb(43 58 158 / 0.35);
+  --chart-1: #4152c4;
+  --chart-2: #e39b2f;
+  --chart-3: #0a93a6;
+  --chart-4: #c9506f;
+  --chart-5: #8a5cc9;
+  --chart-grid: #e8ebf3;
+  color-scheme: light;
+}
+.dark {
+  --canvas: #0b0f27;
+  --surface: #121838;
+  --surface-2: #161d42;
+  --sunken: #0e1331;
+  --line: #232b57;
+  --line-strong: #2f3970;
+  --fg: #e8eaf7;
+  --fg-muted: #a3a9cc;
+  --fg-subtle: #7078a3;
+  --accent: #8c96f0;
+  --accent-fg: #0d1230;
+  --accent-soft: #1c2566;
+  --money: #f2c677;
+  --ring: rgb(140 150 240 / 0.45);
+  --chart-1: #6f7fe6;
+  --chart-2: #b87c1e;
+  --chart-3: #1fa6b8;
+  --chart-4: #d86a88;
+  --chart-5: #9c7be0;
+  --chart-grid: #1f2750;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-sunken: var(--sunken);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-subtle: var(--fg-subtle);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-accent-soft: var(--accent-soft);
+  --color-money: var(--money);
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01" 0;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-canvas text-fg text-sm;
+    line-height: 1.75;
+  }
+  ::selection { background: var(--color-saffron-200); color: var(--color-lapis-900); }
+  :focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; border-radius: 6px; }
+  input, textarea, select, button { font: inherit; }
+  h1, h2, h3, h4 { line-height: 1.35; letter-spacing: -0.01em; }
+  * { scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 1ms !important; transition-duration: 1ms !important; }
+  }
+}
+
+/* ───────────── Custom utilities (Tailwind v4: @utility, not @layer components) ───────────── */
+
+@utility num {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+@utility card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
+
+@utility popover {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-pop);
+}
+
+@utility skeleton {
+  border-radius: var(--radius-sm);
+  background: linear-gradient(90deg, var(--sunken) 0%, var(--line) 40%, var(--sunken) 80%);
+  background-size: 200% 100%;
+  animation: var(--animate-shimmer);
+}
+
+@utility field {
+  width: 100%;
+  height: 2.375rem;
+  padding-inline: 0.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
+  color: var(--fg);
+  transition: border-color 120ms, box-shadow 120ms;
+  &::placeholder { color: var(--fg-subtle); }
+  &:hover { border-color: var(--fg-subtle); }
+  &:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--ring); }
+  &[aria-invalid="true"] { border-color: var(--color-pomegranate-500); }
+}
+
+/* Thin sideways "thread" — the saffron motif used for the active nav item and timeline spine. */
+@utility thread-start {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    inset-block: 6px;
+    inset-inline-start: -12px;
+    width: 3px;
+    border-radius: 9999px;
+    background: var(--color-saffron-500);
+  }
+}
+
+/* Eight-point girih line pattern used sparingly on lapis surfaces. */
+@utility girih {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.07' stroke-width='1'%3E%3Cpath d='M28 4l7 17 17 7-17 7-7 17-7-17-17-7 17-7z'/%3E%3Cpath d='M28 14l10 4 4 10-4 10-10 4-10-4-4-10 4-10z'/%3E%3Cpath d='M0 0l14 14M56 0L42 14M0 56l14-14M56 56L42 42'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 56px 56px;
+}
+
+@utility scroll-x-snap {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+}
+
+/* Sonner toasts in our palette */
+[data-sonner-toaster] [data-sonner-toast] {
+  font-family: var(--font-sans);
+  border-radius: var(--radius-lg) !important;
+  border: 1px solid var(--line) !important;
+  background: var(--surface) !important;
+  color: var(--fg) !important;
+  box-shadow: var(--shadow-pop) !important;
+}
+
+/* Recharts text inherits our type */
+.recharts-text, .recharts-cartesian-axis-tick-value { font-family: var(--font-sans); fill: var(--fg-subtle); font-size: 11px; }
+.recharts-surface:focus { outline: none; }
+
+@keyframes slide-in-rtl { from { transform: translateX(100%) } to { transform: none } }
+@keyframes draw-thread { from { stroke-dashoffset: var(--len, 1200) } to { stroke-dashoffset: 0 } }
+@keyframes stamp { 0% { opacity: 0; transform: rotate(-14deg) scale(1.6) } 60% { opacity: 1; transform: rotate(-8deg) scale(0.94) } 100% { opacity: 1; transform: rotate(-8deg) scale(1) } }
+@keyframes rise { from { opacity: 0; transform: translateY(10px) } to { opacity: 1; transform: none } }

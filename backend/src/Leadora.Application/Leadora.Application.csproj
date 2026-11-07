@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\Leadora.Domain\Leadora.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Only the provider-agnostic EF Core package. No Relational / Npgsql APIs in this layer. -->
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.0" />
+  </ItemGroup>
+</Project>

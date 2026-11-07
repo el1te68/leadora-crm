@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Leadora.Domain/Leadora.Domain.csproj" />
+    <Project Path="src/Leadora.Application/Leadora.Application.csproj" />
+    <Project Path="src/Leadora.Infrastructure/Leadora.Infrastructure.csproj" />
+    <Project Path="src/Leadora.Api/Leadora.Api.csproj" />
+  </Folder>
+</Solution>
