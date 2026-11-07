@@ -2,6 +2,16 @@
 
 # لیدورا (Leadora)
 
+<p align="center">
+  <img src="docs/screenshots/01-landing-hero.png" width="100%" alt="Leadora landing" />
+</p>
+
+| پایپ‌لاین کانبان | داشبورد گزارش‌ها |
+|---|---|
+| ![](docs/screenshots/06-kanban.png) | ![](docs/screenshots/05-dashboard.png) |
+| **پرونده‌ی مشتری** | **حالت تاریک** |
+| ![](docs/screenshots/08b-contact-with-deals.png) | ![](docs/screenshots/20-dark-dashboard.png) |
+
 CRM چندمستاجری فارسی برای تیم‌های فروش، با الهام از HubSpot CRM و Pipedrive. رابط کاربری راست‌به‌چپ است، تاریخ‌ها شمسی، ارقام فارسی و مبالغ به تومان.
 
 **پشته:** ‎.NET 10 (Clean Architecture) + EF Core + PostgreSQL + JWT + SignalR / React 19 + TypeScript + Vite + Tailwind v4 + TanStack Query + Zustand + dnd-kit + Recharts / Docker Compose + nginx + MailHog
